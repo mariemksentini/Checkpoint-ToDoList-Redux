@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import ListTasks from './Components/ListTasks';
+import TitleImage from './Components/Title';
+import AddNewTask from './Components/AddTask';
+import SearchTask from './Components/SearchTasks';
+import CheckAndDeleteAll from './Components/CheckAndDeleteAll';
 
 function App() {
+  const styleAll = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+  const style2 = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={styleAll}>
+      <TitleImage/>
+      <div style={style2}>
+        <SearchTask/>
+        <CheckAndDeleteAll/>
+        <AddNewTask/>
+      </div>
+      <ListTasks/>
     </div>
   );
 }
